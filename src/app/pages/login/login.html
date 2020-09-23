@@ -1,0 +1,39 @@
+<ion-content>
+  <div class="container">
+    <div class="content">
+      <div class="login-logo">
+        <img src="assets/img/appicon.png" alt="Ionic logo">
+      </div>
+    
+      <form class="form">
+
+        <mat-form-field class="full-width"  appearance="outline">
+          <input autocomplete="on" matInput placeholder="Email" [formControl]="usernameFormControl" [errorStateMatcher]="matcher">
+          <mat-hint>Please enter your username</mat-hint>
+          <mat-error *ngIf="usernameFormControl.hasError('minlength') && !usernameFormControl.hasError('required')">
+            Please enter at least 4 characters
+          </mat-error>
+          <mat-error *ngIf="usernameFormControl.hasError('required')">
+            Username is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width"  appearance="outline">
+          <input autocomplete="on" matInput placeholder="Password" [formControl]="passwordFormControl" [errorStateMatcher]="matcher" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-hint>Please enter your password</mat-hint>
+          <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+            Password is <strong>invalid</strong>
+          </mat-error>
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+      </form>
+      <ion-button (click)="login()">Login</ion-button>
+    </div>
+  </div>
+</ion-content>
