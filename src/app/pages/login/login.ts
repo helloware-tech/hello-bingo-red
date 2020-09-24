@@ -41,10 +41,11 @@ export class LoginPage extends Toast {
   public async login() {
     if (this.usernameFormControl.valid && this.passwordFormControl.valid) {
       try {
-        await this.auth.signIn(this.usernameFormControl.value, this.passwordFormControl.value);
+        const message = await this.auth.signIn(this.usernameFormControl.value, this.passwordFormControl.value);
+        this.presentToast(message);
         this.router.navigate([this.routes.dashboard.url]);
       } catch (error) {
-        this.presentToast('We cant login!');
+        this.presentToast(error);
       }
     }
   }
