@@ -15,7 +15,6 @@ import { AuthService } from '../../providers/auth.service';
 
 export class AccountPage implements AfterViewInit {
 	public photoURL = 'https://www.gravatar.com/avatar?d=mm&s=140';
-	public username = '';
 
 	constructor(
 		private router: Router,
@@ -25,50 +24,12 @@ export class AccountPage implements AfterViewInit {
 	) { }
 
 	ngAfterViewInit() {
-		this.getUsername();
+		this.account.getUserData();
 	}
 
-	updatePicture() {
-		console.log('Clicked to update picture');
-	}
-	async changeUsername() {
-		const alert = await this.alertCtrl.create({
-			header: 'Change Username',
-			buttons: [
-				'Cancel',
-				{
-					text: 'Ok',
-					handler: (data: any) => {
-						this.getUsername();
-					}
-				}
-			],
-			inputs: [
-				{
-					type: 'text',
-					name: 'username',
-					value: this.username,
-					placeholder: 'username'
-				}
-			]
-		});
-		await alert.present();
-	}
-
-	getUsername() {
-	}
-
-	changePassword() {
-		console.log('Clicked to change password');
-	}
-
-	logout() {
+	public logout() {
 		this.auth.logout().then((message) =>  {
 			this.router.navigateByUrl('/login');
 		});
-	}
-
-	support() {
-		this.router.navigateByUrl('/support');
 	}
 }

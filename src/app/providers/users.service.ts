@@ -17,7 +17,8 @@ export class UsersService {
 
 	public getUsers() {
 		for (let i = 0; i < 10; i++) {
-			this.http.get('https://randomuser.me/api/').subscribe((res: any) => {
+			this.http.get('https://randomuser.me/api/').toPromise()
+			.then((res: any) => {
 				this.users.push(res.results[0]);
 			});
 		}

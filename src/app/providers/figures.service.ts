@@ -16,9 +16,8 @@ export class FiguresService {
 	 }
 
 	public getFigures() {
-		console.log('figuring...');
-		this.http.get(this.app.API_FIGURES).toPromise().then((res) => {
-			console.log(res);
+		this.http.get(this.app.API_FIGURES).toPromise().then((res: any) => {
+			this.figures = res.data;
 		}).catch((error) => {
 			console.log('error---', error);
 		});

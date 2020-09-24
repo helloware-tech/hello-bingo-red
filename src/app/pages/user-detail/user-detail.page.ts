@@ -10,26 +10,7 @@ import { UsersService } from '../../providers/users.service';
 })
 
 export class UserDetailPage implements OnInit {
-	public user: User = {
-		name: {
-			first: '',
-			last: ''
-		},
-		picture: {
-			large: '',
-			thumbnail: ''
-		},
-		login: {
-			username: '',
-		},
-		location: {
-			country: '',
-			city:  ''
-		},
-		phone: '',
-		gender: '',
-		email: '',
-	};
+	public user: User;
 	constructor(
 		private route: ActivatedRoute,
 		private usersService: UsersService
@@ -45,7 +26,7 @@ export class UserDetailPage implements OnInit {
 				this.user = this.usersService.users[userIndex];
 				clearInterval(interval);
 			}
-		}, 100);
+		}, 500);
 	}
 
 }
