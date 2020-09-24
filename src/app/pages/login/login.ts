@@ -8,45 +8,46 @@ import { AuthService } from '../../providers/auth.service';
 import { RoutesService } from '../../providers/routes.service';
 
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
-  styleUrls: ['./login.scss'],
+	selector: 'page-login',
+	templateUrl: 'login.html',
+	styleUrls: ['./login.scss'],
 })
+
 export class LoginPage extends Toast {
-  public hide = true;
-  public usernameFormControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(4),
-  ]);
-  public passwordFormControl = new FormControl('', [
-    Validators.required,
-  ]);
-  public matcher = new MyErrorStateMatcher();
+	public hide = true;
+	public usernameFormControl = new FormControl('', [
+		Validators.required,
+		Validators.minLength(4),
+	]);
+	public passwordFormControl = new FormControl('', [
+		Validators.required,
+	]);
+	public matcher = new MyErrorStateMatcher();
 
-  constructor(
-    private auth: AuthService,
-    private router: Router,
-    private menu: MenuController,
-    private routes: RoutesService
-  ) {
-    super();
-   }
+	constructor(
+		private auth: AuthService,
+		private router: Router,
+		private menu: MenuController,
+		private routes: RoutesService
+	) {
+		super();
+	 }
 
-  ionViewWillEnter() {
-    this.menu.enable(false);
-  }
-  ionViewWillLeave() {
-    this.menu.enable(true);
-  }
-  public async login() {
-    if (this.usernameFormControl.valid && this.passwordFormControl.valid) {
-      try {
-        const message = await this.auth.signIn(this.usernameFormControl.value, this.passwordFormControl.value);
-        this.presentToast(message);
-        this.router.navigate([this.routes.dashboard.url]);
-      } catch (error) {
-        this.presentToast(error);
-      }
-    }
-  }
+	ionViewWillEnter() {
+		this.menu.enable(false);
+	}
+	ionViewWillLeave() {
+		this.menu.enable(true);
+	}
+	public async login() {
+		if (this.usernameFormControl.valid && this.passwordFormControl.valid) {
+			try {
+				const message = await this.auth.signIn(this.usernameFormControl.value, this.passwordFormControl.value);
+				this.presentToast(message);
+				this.router.navigate([this.routes.dashboard.url]);
+			} catch (error) {
+				this.presentToast(error);
+			}
+		}
+	}
 }

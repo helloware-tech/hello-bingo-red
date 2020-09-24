@@ -1,29 +1,29 @@
 ion-content{
-    --padding-top: 100px;
+		--padding-top: 100px;
 }
 .user-card {
-    display: flex;
-    flex-direction: column;
-  }
-  ion-col:not(:last-of-type) .user-card {
-    margin-bottom: 0;
-  }
-  .user-card .user-item h2 {
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-  }
-  .user-card .user-item p {
-    font-size: 13px;
-    letter-spacing: 0.02em;
-  }
-  .user-card ion-card-header {
-    padding: 0;
-  }
-  .user-card ion-card-content {
-    padding: 0;
-  }
-  ion-label{
-      margin: 0;
-  }
-  
+	display: flex;
+	flex-direction: column;
+}
+ion-col:not(:last-of-type) .user-card {
+	margin-bottom: 0;
+}
+.user-card .user-item h2 {
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+}
+.user-card .user-item p {
+	font-size: 13px;
+	letter-spacing: 0.02em;
+}
+.user-card ion-card-header {
+	padding: 0;
+}
+.user-card ion-card-content {
+	padding: 0;
+}
+ion-label{
+		margin: 0;
+}
+	

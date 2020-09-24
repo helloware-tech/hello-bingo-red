@@ -17,41 +17,41 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
-    MatMenuModule,
-    MatIconModule,
-    MatRippleModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSnackBarModule,
-    MatProgressBarModule,
-    MatExpansionModule
-  ],
-  exports: [
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
-    MatMenuModule,
-    MatIconModule,
-    MatRippleModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSnackBarModule,
-    MatProgressBarModule,
-    MatExpansionModule
-  ]
+	declarations: [],
+	imports: [
+		CommonModule,
+		MatButtonModule,
+		MatInputModule,
+		MatFormFieldModule,
+		MatTableModule,
+		MatSortModule,
+		MatPaginatorModule,
+		MatMenuModule,
+		MatIconModule,
+		MatRippleModule,
+		MatDialogModule,
+		MatDatepickerModule,
+		MatNativeDateModule,
+		MatSnackBarModule,
+		MatProgressBarModule,
+		MatExpansionModule
+	],
+	exports: [
+		MatButtonModule,
+		MatInputModule,
+		MatFormFieldModule,
+		MatTableModule,
+		MatSortModule,
+		MatPaginatorModule,
+		MatMenuModule,
+		MatIconModule,
+		MatRippleModule,
+		MatDialogModule,
+		MatDatepickerModule,
+		MatNativeDateModule,
+		MatSnackBarModule,
+		MatProgressBarModule,
+		MatExpansionModule
+	]
 })
 export class MaterialModulesModule {}

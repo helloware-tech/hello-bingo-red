@@ -3,23 +3,23 @@ import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 
 export class UsersService {
-  public users: Array<User> = [];
+	public users: Array<User> = [];
 
-  constructor(
-    private http: HttpClient
-  ) {
-    this.getUsers();
-  }
+	constructor(
+		private http: HttpClient
+	) {
+		this.getUsers();
+	}
 
-  public getUsers() {
-    for (let i = 0; i < 10; i++) {
-      this.http.get('https://randomuser.me/api/').subscribe((res: any) => {
-        this.users.push(res.results[0]);
-      });
-    }
-  }
+	public getUsers() {
+		for (let i = 0; i < 10; i++) {
+			this.http.get('https://randomuser.me/api/').subscribe((res: any) => {
+				this.users.push(res.results[0]);
+			});
+		}
+	}
 }

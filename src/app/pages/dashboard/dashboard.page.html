@@ -1,30 +1,30 @@
 <ion-content>
-  <div class="container">
-    <ion-card routerLink="../../users">
-      <ion-card-header>
-        <ion-item detail="false" lines="none">
-          <ion-label>
-            <h1 class="color-secondary">{{'users' | uppercase}}</h1>
-          </ion-label>
-        </ion-item>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-icon name="people" class="color-secondary"></ion-icon>
-        <ion-label class="color-secondary">{{usersService.users.length | number}}</ion-label>
-      </ion-card-content>
-    </ion-card>
-    <ion-card routerLink="../../figures">
-      <ion-card-header>
-        <ion-item detail="false" lines="none">
-          <ion-label>
-            <h1 class="color-primary">{{'figures' | uppercase}}</h1>
-          </ion-label>
-        </ion-item>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-icon name="grid" class="color-primary"></ion-icon>
-        <ion-label class="color-primary">{{figuresService.figures.length | number}}</ion-label>
-      </ion-card-content>
-    </ion-card>
-  </div>
+	<div class="container">
+		<ion-card routerLink="../../users">
+			<ion-card-header>
+				<ion-item detail="false" lines="none">
+					<ion-label>
+						<h1 class="color-secondary">{{'users' | uppercase}}</h1>
+					</ion-label>
+				</ion-item>
+			</ion-card-header>
+			<ion-card-content>
+				<ion-icon name="people" class="color-secondary"></ion-icon>
+				<ion-label class="color-secondary">{{usersService.users.length | number}}</ion-label>
+			</ion-card-content>
+		</ion-card>
+		<ion-card routerLink="../../figures">
+			<ion-card-header>
+				<ion-item detail="false" lines="none">
+					<ion-label>
+						<h1 class="color-primary">{{'figures' | uppercase}}</h1>
+					</ion-label>
+				</ion-item>
+			</ion-card-header>
+			<ion-card-content>
+				<ion-icon name="grid" class="color-primary"></ion-icon>
+				<ion-label class="color-primary">{{figuresService.figures.length | number}}</ion-label>
+			</ion-card-content>
+		</ion-card>
+	</div>
 </ion-content>

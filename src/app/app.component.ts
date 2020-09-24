@@ -8,62 +8,62 @@ import { MyRoute } from './interfaces/my-route';
 import { AuthService } from './providers/auth.service';
 import { RoutesService } from './providers/routes.service';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent extends Toast implements OnInit {
-  public pages: Array<MyRoute> = [];
-  loggedIn = false;
-  dark = false;
+	public pages: Array<MyRoute> = [];
+	loggedIn = false;
+	dark = false;
 
-  constructor(
-    private menu: MenuController,
-    private router: Router,
-    private swUpdate: SwUpdate,
-    private toastCtrl: ToastController,
-    private routes: RoutesService,
-    private auth: AuthService
-  ) {
-    super();
-    this.initializeApp();
-  }
+	constructor(
+		private menu: MenuController,
+		private router: Router,
+		private swUpdate: SwUpdate,
+		private toastCtrl: ToastController,
+		private routes: RoutesService,
+		private auth: AuthService
+	) {
+		super();
+		this.initializeApp();
+	}
 
-  async ngOnInit() {
-    this.menu.enable(true);
+	async ngOnInit() {
+		this.menu.enable(true);
 
-    this.swUpdate.available.subscribe(async res => {
-      const toast = await this.toastCtrl.create({
-        message: 'Update available!',
-        position: 'bottom',
-        buttons: [
-          {
-            role: 'cancel',
-            text: 'Reload'
-          }
-        ]
-      });
+		this.swUpdate.available.subscribe(async res => {
+			const toast = await this.toastCtrl.create({
+				message: 'Update available!',
+				position: 'bottom',
+				buttons: [
+					{
+						role: 'cancel',
+						text: 'Reload'
+					}
+				]
+			});
 
-      await toast.present();
+			await toast.present();
 
-      toast
-        .onDidDismiss()
-        .then(() => this.swUpdate.activateUpdate())
-        .then(() => window.location.reload());
-    });
-  }
+			toast
+				.onDidDismiss()
+				.then(() => this.swUpdate.activateUpdate())
+				.then(() => window.location.reload());
+		});
+	}
 
-  initializeApp() {
-    this.pages = this.routes.primaries;
-    console.log('Inicializaded');
-  }
+	initializeApp() {
+		this.pages = this.routes.primaries;
+		console.log('Inicializaded');
+	}
 
-  logout() {
-    this.auth.logout().then((message) => {
-      this.presentToast(message);
-      return this.router.navigateByUrl('/login');
-    });
-  }
+	logout() {
+		this.auth.logout().then((message) => {
+			this.presentToast(message);
+			return this.router.navigateByUrl('/login');
+		});
+	}
 }

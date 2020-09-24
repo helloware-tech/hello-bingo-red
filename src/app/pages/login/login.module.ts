@@ -8,16 +8,16 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { MaterialModulesModule } from '../../modules/material-modules/material-modules.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    IonicModule,
-    LoginPageRoutingModule,
-    MaterialModulesModule
-  ],
-  declarations: [
-    LoginPage,
-  ]
+	imports: [
+		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
+		IonicModule,
+		LoginPageRoutingModule,
+		MaterialModulesModule
+	],
+	declarations: [
+		LoginPage,
+	]
 })
 export class LoginModule { }

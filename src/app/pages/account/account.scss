@@ -1,13 +1,37 @@
 ion-toolbar {
-  position: absolute;
+	position: absolute;
 
-  top: 0;
-  left: 0;
-  right: 0;
+	top: 0;
+	left: 0;
+	right: 0;
 
-  --background: transparent;
+	--background: transparent;
 }
-img {
-  max-width: 140px;
-  border-radius: 50%;
+.user-header {
+	position: relative;
+	display: flex;
+	padding-top: 50px;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 300px;
+	img {
+			width: 150px;
+			border-radius: 50%;
+	}
+	h2 {
+			position: absolute;
+			bottom: 10px;
+	}
+}
+.user-detail p {
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+.user-detail hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	background: var(--ion-color-step-150, #d7d8da);
 }

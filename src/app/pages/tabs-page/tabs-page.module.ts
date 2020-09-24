@@ -10,17 +10,17 @@ import { FiguresPageModule } from '../figures/figures.module';
 import { ComponentsModule } from '../../modules/components/components.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    IonicModule,
-    TabsPageRoutingModule,
-    DashboardPageModule,
-    UsersPageModule,
-    FiguresPageModule,
-    ComponentsModule
-  ],
-  declarations: [
-    TabsPage,
-  ]
+	imports: [
+		CommonModule,
+		IonicModule,
+		TabsPageRoutingModule,
+		DashboardPageModule,
+		UsersPageModule,
+		FiguresPageModule,
+		ComponentsModule
+	],
+	declarations: [
+		TabsPage,
+	]
 })
 export class TabsModule { }
