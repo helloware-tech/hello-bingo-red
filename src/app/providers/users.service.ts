@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class UsersService {
-  public users: Array<any> = [];
+  public users: Array<User> = [];
 
   constructor(
     private http: HttpClient

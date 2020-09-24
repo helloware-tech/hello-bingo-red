@@ -1,9 +1,42 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>userDetail</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="speaker-detail">
 
-<ion-content>
+  <div class="speaker-background">
+    <img [src]="user.picture.large">
+    <h2>{{user.name.first + ' ' + user.name.last}}</h2>
+  </div>
 
+  <div class="ion-padding speaker-detail">
+    <p>{{'@' + user.login.username}} Say hello on social media!</p>
+
+    <hr>
+
+    <ion-chip color="twitter" button>
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-label>Twitter</ion-label>
+    </ion-chip>
+
+    <ion-chip color="dark" button>
+      <ion-icon name="logo-github"></ion-icon>
+      <ion-label>GitHub</ion-label>
+    </ion-chip>
+
+    <ion-chip color="instagram" button>
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label>Instagram</ion-label>
+    </ion-chip>
+  </div>
+  <ion-list lines="none">
+    <ion-item detail="false">
+      <ion-label>
+        <p>Phone: {{user.phone}}</p>
+        <p>Gender: {{user.gender}}</p>
+        <p>E-mail: {{user.email}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item detail="false">
+      <ion-label>
+        <h3>{{user.location.country + ', ' + user.location.city}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
