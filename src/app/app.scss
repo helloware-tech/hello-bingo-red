@@ -1,0 +1,20 @@
+$colors : primary,secondary,tertiary,success,warning,danger,dark,medium,light;
+
+.uppercase{
+    text-transform: uppercase !important;
+}
+
+.color{
+    @each $color in $colors {
+        &-#{$color}{
+            color: var(--ion-color-#{$color}) !important;
+        }
+    }
+}
+.bg{
+    @each $color in $colors {
+        &-#{$color}{
+            background: var(--ion-color-#{$color}) !important;
+        }
+    }
+}

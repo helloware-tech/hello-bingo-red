@@ -7,6 +7,7 @@ import { TabsPageRoutingModule } from './tabs-page-routing.module';
 import { UsersPageModule } from '../users/users.module';
 import { DashboardPageModule } from '../dashboard/dashboard.module';
 import { FiguresPageModule } from '../figures/figures.module';
+import { ComponentsModule } from '../../modules/components/components.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { FiguresPageModule } from '../figures/figures.module';
     TabsPageRoutingModule,
     DashboardPageModule,
     UsersPageModule,
-    FiguresPageModule
+    FiguresPageModule,
+    ComponentsModule
   ],
   declarations: [
     TabsPage,

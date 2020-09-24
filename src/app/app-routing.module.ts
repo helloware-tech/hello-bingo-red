@@ -23,7 +23,11 @@ const routes: Routes = [
     path: 'account',
     loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule),
     canActivate: [IsLogged]
+  },  {
+    path: 'user-detail',
+    loadChildren: () => import('./pages/user-detail/user-detail.module').then( m => m.UserDetailPageModule)
   },
+
 ];
 
 @NgModule({

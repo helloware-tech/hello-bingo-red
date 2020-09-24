@@ -1,5 +1,6 @@
-<ion-tabs>
+<app-top-bar></app-top-bar>
 
+<ion-tabs>
   <ion-tab-bar slot="bottom">
     <ng-container *ngFor="let page of pages">
       <ion-tab-button [tab]="page.name">
@@ -8,5 +9,4 @@
       </ion-tab-button>
     </ng-container>
   </ion-tab-bar>
-
 </ion-tabs>

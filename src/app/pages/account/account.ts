@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AlertController } from '@ionic/angular';
+import { AuthService } from '../../providers/auth.service';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class AccountPage implements AfterViewInit {
 
   constructor(
     public alertCtrl: AlertController,
-    public router: Router,
+    private router: Router,
+    private auth: AuthService
   ) { }
 
   ngAfterViewInit() {
@@ -24,10 +26,6 @@ export class AccountPage implements AfterViewInit {
   updatePicture() {
     console.log('Clicked to update picture');
   }
-
-  // Present an alert with the current username populated
-  // clicking OK will update the username and display it
-  // clicking Cancel will close the alert and do nothing
   async changeUsername() {
     const alert = await this.alertCtrl.create({
       header: 'Change Username',
@@ -60,7 +58,9 @@ export class AccountPage implements AfterViewInit {
   }
 
   logout() {
-    this.router.navigateByUrl('/login');
+    this.auth.logout().then((message) =>  {
+      this.router.navigateByUrl('/login');
+    });
   }
 
   support() {
