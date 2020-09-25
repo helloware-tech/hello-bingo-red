@@ -38,7 +38,9 @@ export class FigureDetailPage extends Tools implements OnInit {
 					figureName: this.name,
 					positions: this.getOptions(),
 				};
-				this.figuresService.createFigure(data);
+				this.figuresService.createFigure(data).then((message: string) => {
+					this.toast.present(message);
+				});
 			}
 		});
 	}

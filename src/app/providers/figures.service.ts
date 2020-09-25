@@ -29,7 +29,7 @@ export class FiguresService {
 			console.log('error---', error);
 		});
 	}
-	public getFigures() {
+	public getFigures(): Promise<any> {
 		return new Promise((resolve, reject) => {
 			const response = new Subject<any>();
 			if (this.figures.length > 0) {
@@ -44,10 +44,10 @@ export class FiguresService {
 			}
 		});
 	}
-	public getFiguresFromHttp() {
+	public getFiguresFromHttp(): Promise<any> {
 		return this.http.get(this.app.API_FIGURES).toPromise();
 	}
-	public createFigure(data): any {
+	public createFigure(data): Promise<any> {
 		return new Promise(async (resolve, reject) => {
 			try {
 				await this.http.post(this.app.API_FIGURES, data).toPromise();
@@ -57,7 +57,7 @@ export class FiguresService {
 			}
 		});
 	}
-	public updateFigure(id: number, data): any {
+	public updateFigure(id: number, data): Promise<any> {
 		return new Promise(async (resolve, reject) => {
 			try {
 				await this.http.put(`${this.app.API_FIGURES}/${id}`, data).toPromise();
