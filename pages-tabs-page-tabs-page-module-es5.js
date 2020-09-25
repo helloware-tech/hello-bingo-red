@@ -1136,7 +1136,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 positions: _this5.getOptions()
               };
 
-              _this5.figuresService.createFigure(data);
+              _this5.figuresService.createFigure(data).then(function (message) {
+                _this5.toast.present(message);
+              });
             }
           });
         }

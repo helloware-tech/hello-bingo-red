@@ -667,7 +667,9 @@ let FigureDetailPage = class FigureDetailPage extends _functions__WEBPACK_IMPORT
                     figureName: this.name,
                     positions: this.getOptions(),
                 };
-                this.figuresService.createFigure(data);
+                this.figuresService.createFigure(data).then((message) => {
+                    this.toast.present(message);
+                });
             }
         });
     }
