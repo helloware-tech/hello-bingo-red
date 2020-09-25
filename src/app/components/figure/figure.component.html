@@ -1,3 +1,24 @@
-<p>
-	figure works!
-</p>
+<ion-card>
+	<ion-card-title>
+		<ion-item>
+			<ion-label>{{data?.name}}</ion-label>
+			<ion-buttons slot="end">
+				<ion-button *ngIf="editing" (click)="updateFigure()" color="success">
+					<ion-icon slot="icon-only" name="save"></ion-icon>
+				</ion-button>
+				<ion-button *ngIf="!editing" (click)="editFigure()" color="primary">
+					<ion-icon slot="icon-only" name="pencil"></ion-icon>
+				</ion-button>
+				<ion-button (click)="deleteFigure()" color="danger">
+					<ion-icon slot="icon-only" name="trash"></ion-icon>
+				</ion-button>
+			</ion-buttons>
+		</ion-item>
+	</ion-card-title>
+	<ion-card-content>
+		<div class="guard" *ngIf="!editing"></div>
+		<div class="column" *ngFor="let column of columns(); let i = index">
+			<app-figure-item (change)="changeItem($event, ((i * 5) + j))" *ngFor="let item of column; let j = index" [state]="item"></app-figure-item>
+		</div>
+	</ion-card-content>
+</ion-card>

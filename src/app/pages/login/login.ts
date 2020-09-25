@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { MyErrorStateMatcher } from '../../classes/my-error-state-matcher';
-import { Toast } from '../../functions/toast';
+import { Tools } from '../../functions';
 import { AuthService } from '../../providers/auth.service';
 import { RoutesService } from '../../providers/routes.service';
 
@@ -13,7 +13,7 @@ import { RoutesService } from '../../providers/routes.service';
 	styleUrls: ['./login.scss'],
 })
 
-export class LoginPage extends Toast {
+export class LoginPage extends Tools {
 	public hide = true;
 	public usernameFormControl = new FormControl('', [
 		Validators.required,
@@ -43,10 +43,10 @@ export class LoginPage extends Toast {
 		if (this.usernameFormControl.valid && this.passwordFormControl.valid) {
 			try {
 				const message = await this.auth.signIn(this.usernameFormControl.value, this.passwordFormControl.value);
-				this.presentToast(message);
+				this.toast.present(message);
 				this.router.navigate([this.routes.dashboard.url]);
 			} catch (error) {
-				this.presentToast(error);
+				this.toast.present(error);
 			}
 		}
 	}

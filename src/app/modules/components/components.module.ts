@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MaterialModulesModule } from '../material-modules/material-modules.module';
 import { IonicModule } from '@ionic/angular';
 import { TopBarComponent } from '../../components/top-bar/top-bar.component';
+import { FigureComponent } from '../../components/figure/figure.component';
+import { FigureItemComponent } from '../../components/figure-item/figure-item.component';
 
 @NgModule({
 	imports: [
@@ -11,10 +13,14 @@ import { TopBarComponent } from '../../components/top-bar/top-bar.component';
 		MaterialModulesModule,
 	],
 	declarations: [
-		TopBarComponent
+		TopBarComponent,
+		FigureComponent,
+		FigureItemComponent,
 	],
 	exports: [
-		TopBarComponent
+		TopBarComponent,
+		FigureComponent,
+		FigureItemComponent,
 	],
 })
 

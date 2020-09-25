@@ -16,7 +16,8 @@ export class HttpInterceptorService implements HttpInterceptor {
 		if (token) {
 			request = req.clone({
 				setHeaders: {
-					authorization: token
+					authorization: token,
+					'content-type': 'application/json'
 				}
 			});
 		}

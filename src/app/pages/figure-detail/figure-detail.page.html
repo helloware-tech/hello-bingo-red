@@ -1,3 +1,39 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-item>
+            <ion-label>Create a new Figure</ion-label>
+            <ion-buttons slot="end">
+                <ion-button slot="icon-only" (click)="closeModal()">
+                    <ion-icon name="close"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
 <ion-content>
-
+    <div class="container">
+        <ion-card>
+            <ion-card-title>
+                <ion-item>
+                    <ion-input [(ngModel)]="name" placeholder="Figure name"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Group</ion-label>
+                    <ion-select placeholder="Select Group" [(ngModel)]="group">
+                        <ion-select-option *ngFor="let option of figuresService.groups" [value]="option.id">{{option.name}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+            </ion-card-title>
+            <ion-card-content>
+                <div class="column" *ngFor="let column of columns(); let i = index">
+                    <app-figure-item (change)="changeItem($event, ((i * 5) + j))" *ngFor="let item of column; let j = index" [state]="item"></app-figure-item>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+		<ion-fab-button (click)="createFigure()">
+		  <ion-icon name="save"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
 </ion-content>

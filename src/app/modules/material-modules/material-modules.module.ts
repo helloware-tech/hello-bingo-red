@@ -15,6 +15,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
 	declarations: [],
@@ -34,7 +35,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 		MatNativeDateModule,
 		MatSnackBarModule,
 		MatProgressBarModule,
-		MatExpansionModule
+		MatExpansionModule,
+		ScrollingModule
 	],
 	exports: [
 		MatButtonModule,
@@ -51,7 +53,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 		MatNativeDateModule,
 		MatSnackBarModule,
 		MatProgressBarModule,
-		MatExpansionModule
+		MatExpansionModule,
+		ScrollingModule
 	]
 })
 export class MaterialModulesModule {}

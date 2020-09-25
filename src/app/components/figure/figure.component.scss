@@ -1,0 +1,19 @@
+ion-card{
+    max-width: 330px;
+    margin: 20px auto;
+    ion-card-content{
+        display: flex;
+        flex-flow: column wrap;
+        position: relative;
+        .guard{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .column{
+            display: flex;
+        }
+    }
+}

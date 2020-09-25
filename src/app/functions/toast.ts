@@ -1,12 +1,12 @@
 import { ToastController } from '@ionic/angular';
 
-export abstract class Toast {
+export class Toast {
 	private toastController;
 	constructor() {
 		this.toastController = new ToastController();
 	 }
 
-	async presentToast(
+	public async present(
 		message: string,
 		duration?: number,
 		position?: 'bottom' | 'middle' | 'top'

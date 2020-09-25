@@ -5,13 +5,15 @@ import { IonicModule } from '@ionic/angular';
 
 import { FigureDetailPageRoutingModule } from './figure-detail-routing.module';
 import { FigureDetailPage } from './figure-detail.page';
+import { ComponentsModule } from '../../modules/components/components.module';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		FormsModule,
 		IonicModule,
-		FigureDetailPageRoutingModule
+		FigureDetailPageRoutingModule,
+		ComponentsModule
 	],
 	declarations: [FigureDetailPage]
 })

@@ -1,0 +1,21 @@
+ion-content{
+    --padding-top: 100px;
+    .figures{
+        .example-viewport {
+            width: 100%;
+            max-width: 764px;
+            height: 60vh;
+            margin: auto;
+        }
+        .example-item-detail {
+            height: 18px;
+        }
+        .example-alternate {
+            background: rgba(127, 127, 127, 0.3);
+        }
+    }
+    .groups{
+        width: 80%;
+        margin: auto;
+    }
+}

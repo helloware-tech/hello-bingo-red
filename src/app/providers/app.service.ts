@@ -10,6 +10,7 @@ export class AppService {
 	readonly API_PROFILE = 'https://java.bocetos.co/userred-0.0.1-SNAPSHOT/myprofile';
 	readonly API_GROUP_FIGURES = 'https://java.bocetos.co/gamered-0.0.1-SNAPSHOT/groupfigure';
 	readonly API_FIGURES = 'https://java.bocetos.co/gamered-0.0.1-SNAPSHOT/figure';
+	readonly API_USERS = 'https://randomuser.me/api/';
 
 	constructor() { }
 }

@@ -1,9 +1,48 @@
-<ion-header>
-	<ion-toolbar>
-		<ion-title>figures</ion-title>
-	</ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+	<ion-toolbar>
+		<ion-segment #tab value="figures">
+			<ion-segment-button value="figures">
+				<ion-label>Figures</ion-label>
+				<ion-icon name="grid"></ion-icon>
+			</ion-segment-button>
+			<ion-segment-button value="groups" selected>
+				<ion-label>Groups</ion-label>
+				<ion-icon name="albums"></ion-icon>
+		  	</ion-segment-button>
+		</ion-segment>
+	</ion-toolbar>
+	<div class="figures" *ngIf="tab.value === 'figures'">
+		<cdk-virtual-scroll-viewport [itemSize]="300" class="example-viewport">
+			<app-figure *cdkVirtualFor="let figure of figures" [data]="figure"></app-figure>
+		</cdk-virtual-scroll-viewport>
+	</div>
+	<div class="groups" *ngIf="tab.value === 'groups'">
+		<ion-list>
+			<ion-item-sliding class="cursor-pointer" #item *ngFor="let group of figuresService.groups"> 
+				<ion-item (click)="item.open('end')">
+					<ion-icon color="secondary" slot="start" name="options"></ion-icon>
+					<ion-label>
+						<strong color="secondary">{{group.name}}</strong>
+						<p>ID: {{group.id}}</p>
+					</ion-label>
+					<ion-icon color="secondary" slot="end" name="chevron-back" style="margin: 0;"></ion-icon>
+				</ion-item>
+				<ion-item-options>
+					<ion-item-option color="danger">
+						<ion-icon slot="start" name="trash" style="margin: 5px;"></ion-icon>
+						Delete
+					</ion-item-option>
+					<ion-item-option color="warning"  style="padding-right: 10px;">
+						<ion-icon slot="start" name="pencil" style="margin: 5px;"></ion-icon>
+						Edit   
+					</ion-item-option>
+				</ion-item-options>
+			</ion-item-sliding>  		
+		</ion-list>
+	</div>
+	<ion-fab *ngIf="tab.value === 'figures'" vertical="bottom" horizontal="end" slot="fixed" style="right: 20px; bottom: 20px;">
+		<ion-fab-button (click)="openModal()">
+		  <ion-icon name="add"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
 </ion-content>
